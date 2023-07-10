@@ -11,6 +11,18 @@ const PORT = 4000;
 
 app.use(bodyParser.json());
 
+//mounting routes
+const authRoutes = require("./routes/authRoutes");
+const userRoutes = require("./routes/userRoutes");
+const tokenRoutes = require("./routes/tokenRoutes");
+
+
+
+app.use("/api", authRoutes); //authentication route mount point for /api prefix
+app.use("/api", userRoutes); //user route mount point for /api prefix
+app.use("/api", tokenRoutes); //token route mount point for /api prefix
+
+
 app.use(
   express.urlencoded({
     extended: true,
