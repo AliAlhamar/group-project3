@@ -22,10 +22,8 @@ app.use(function (req, res, next) {
   next();
 });
 
-console.log(process.env.MONGOCLUSTER);
-
 mongoose
-  .connect(process.env.MONGOCLUSTER)
+  .connect(process.env.MONGO)
   .then(() => {
     console.log("Connected To DB.");
   })
