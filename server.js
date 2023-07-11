@@ -15,13 +15,14 @@ app.use(bodyParser.json());
 const authRoutes = require("./routes/authRoutes");
 const userRoutes = require("./routes/userRoutes");
 const tokenRoutes = require("./routes/tokenRoutes");
-
-
+const videoRoute = require("./Routes/video");
+const commentRoutes = require("./Routes/comment");
 
 app.use("/api", authRoutes); //authentication route mount point for /api prefix
 app.use("/api", userRoutes); //user route mount point for /api prefix
 app.use("/api", tokenRoutes); //token route mount point for /api prefix
-
+app.use("/api", videoRoute); //video route mount point for /api prefix
+app.use("/api", commentRoutes); //comment route mount point for /api prefix
 
 app.use(
   express.urlencoded({
