@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const UserPlaylist = mongoose.model("UserPlaylist");
+const UserPlaylist = require("../models/playlist");
 
 // Create a new user playlist
 const createUserPlaylist = async (req, res) => {

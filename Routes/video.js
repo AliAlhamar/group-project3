@@ -1,14 +1,11 @@
 const express = require("express");
 const router = express.Router();
-const {
-  createUserVideo,
-  getAllUserVideos,
-} = require("../controllers/userVideoController");
+const videoController = require("../Controllers/video");
 
 // Create a new user video
-router.post("/userVideos", createUserVideo);
+router.post("/userVideos", videoController.createUserVideo);
 
 // Get all user videos
-router.get("/userVideos", getAllUserVideos);
+router.get("/userVideos", videoController.getAllUserVideos);
 
 module.exports = router;
