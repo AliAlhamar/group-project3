@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const Comment = mongoose.model("Comment");
+const Comment = require("../models/comment");
 
 // Create a new comment
 const createComment = async (req, res) => {

@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
-const UserVideo = mongoose.model("UserVideo");
-
+const UserVideo = require("../models/video");
 // Create a new user video
 const createUserVideo = async (req, res) => {
   try {
