@@ -12,9 +12,9 @@ const PORT = 4000;
 app.use(bodyParser.json());
 
 //mounting routes
-const authRoutes = require("./routes/authRoutes");
-const userRoutes = require("./routes/userRoutes");
-const tokenRoutes = require("./routes/tokenRoutes");
+const authRoutes = require("./Routes/authRoute");
+const userRoutes = require("./Routes/User");
+const tokenRoutes = require("./Routes/tokenRoutes");
 const videoRoute = require("./Routes/video");
 const commentRoutes = require("./Routes/comment");
 
