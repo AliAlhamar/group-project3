@@ -75,4 +75,4 @@ const getAllUserPlaylists = async (req, res) => {
 module.exports = { createUserPlaylist, getAllUserPlaylists };
 ```
 [Wireframes](https://www.figma.com/file/bwu3DGN4iuSwahi8f6v4Sk/Playlisters-Whireframe?type=design&node-id=0-1&mode=design&t=g8bcoGtzx1VVjOuc-0)
-[Trello](https://www.figma.com/file/bwu3DGN4iuSwahi8f6v4Sk/Playlisters-Whireframe?type=design&node-id=0-1&mode=design&t=g8bcoGtzx1VVjOuc-0)
+[Trello](https://trello.com/b/a10jzX2L/project03)
