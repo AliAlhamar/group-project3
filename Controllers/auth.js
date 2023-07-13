@@ -25,12 +25,15 @@ const dashboard = async (req, res) => {
       // user = await user.save();
     } else {
       // If the user does not exist, create a new user with their email and access token
-      user = await User.create({
-        name: req.body.userObject.name,
-        email: req.body.userObject.email,
-        // access_token: req.body.userObject.access_token,
-        // refresh_token: req.body.userObject.refresh_token,
-      }, {timestamps: true});
+      user = await User.create(
+        {
+          name: req.body.userObject.name,
+          email: req.body.userObject.email,
+          // access_token: req.body.userObject.access_token,`
+          // refresh_token: req.body.userObject.refresh_token,
+        },
+        { timestamps: true }
+      );
     }
 
     // res.render("dashboard", { user });
@@ -73,7 +76,9 @@ const handleLogin = async (req, res) => {
 
 // Helper function to generate a new access token
 const generateAccessToken = (email) => {
-  return jwt.sign({ email }, process.env.ACCESS_TOKEN_SECRET, { expiresIn: 15 });
+  return jwt.sign({ email }, process.env.ACCESS_TOKEN_SECRET, {
+    expiresIn: 15,
+  });
 };
 
 // Helper function to generate a new refresh token

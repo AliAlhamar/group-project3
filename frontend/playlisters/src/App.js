@@ -1,24 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import SignUpPage from "./components/Signup";
+import Signin from "./components/Signin";
+import { BrowserRouter } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Home from "./components/Home";
+import Add from "./components/Add";
+import Profile from "./components/Profile";
+import AddVideos from "./components/AddVideos";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    // <BrowserRouter basename="/">
+    //   <Navbar />
+
+    //   <Signin />
+    // </BrowserRouter>
+
+    <Router>
+      <Navbar />
+      {/* <nav>
+        <Link to="/">Home</Link>
+        <Link to="/signin">Login</Link>
+        <Link to="/signup">Sign Up</Link>
+      </nav> */}
+      <Routes>
+        <Route path="/signin" element={<Signin />} />
+        <Route path="/signup" element={<SignUpPage />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/add" element={<Add />} />
+        <Route path="/addvideo" element={<AddVideos />} />
+        <Route path="/profile" element={<Profile />} />
+      </Routes>
+    </Router>
   );
 }
 

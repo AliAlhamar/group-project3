@@ -45,7 +45,7 @@ app.use(function (req, res, next) {
   next();
 });
 
-console.log(process.env.MONGO);
+console.log(process.env.MONGOCLUSTER);
 
 mongoose
   .connect(process.env.MONGO)
