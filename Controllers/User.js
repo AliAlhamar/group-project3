@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
-const User = mongoose.model("User");
+const UserVideo = require("../models/User");
 
 // Create a new user
 const createUser = async (req, res) => {

@@ -63,53 +63,38 @@ function Signin() {
   return (
     <Grid item xs={12} md={6}>
       <SignInCard sx={{ marginLeft: "38%", marginTop: "7%" }}>
-        <CardHeader title="Sign Up" sx={{ color: "#EDF2F4" }} />
+        <CardHeader title="Add A Playlist" sx={{ color: "#EDF2F4" }} />
         <SignInForm>
           <WhiteOutlinedTextField
-            label="Name"
+            label="Title"
             variant="outlined"
             margin="normal"
             required
             fullWidth
             autoFocus
-            name="name"
+            name="title"
           />
           <WhiteOutlinedTextField
-            label="Email"
+            label="Description"
             variant="outlined"
             margin="normal"
             required
             fullWidth
-            name="email"
-            type="email"
-          />
-          <WhiteOutlinedTextField
-            label="Password"
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            name="password"
-            type="password"
+            name="description"
           />
           <SignInButton variant="contained" fullWidth>
-            Register
+            Add Playlist
           </SignInButton>
         </SignInForm>
-        <SignInFooter container spacing={2}>
-          <Grid item xs>
-            <Button color="primary" fullWidth>
-              Forgot password?
-            </Button>
-          </Grid>
-          <Grid item xs>
-            <Button color="primary" fullWidth>
-              <Link to="/signin" className="anchor-reg">
-                Signin
-              </Link>
-            </Button>
-          </Grid>
-        </SignInFooter>
+        <CardHeader title="Or By Link" sx={{ color: "red" }} />
+        <WhiteOutlinedTextField
+          label="Link"
+          variant="outlined"
+          margin="normal"
+          required
+          fullWidth
+          name="link"
+        />
       </SignInCard>
     </Grid>
   );

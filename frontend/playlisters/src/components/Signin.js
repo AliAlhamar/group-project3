@@ -63,25 +63,16 @@ function Signin() {
   return (
     <Grid item xs={12} md={6}>
       <SignInCard sx={{ marginLeft: "38%", marginTop: "7%" }}>
-        <CardHeader title="Sign Up" sx={{ color: "#EDF2F4" }} />
+        <CardHeader title="Sign In" sx={{ color: "#EDF2F4" }} />
         <SignInForm>
-          <WhiteOutlinedTextField
-            label="Name"
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            autoFocus
-            name="name"
-          />
           <WhiteOutlinedTextField
             label="Email"
             variant="outlined"
             margin="normal"
             required
             fullWidth
+            autoFocus
             name="email"
-            type="email"
           />
           <WhiteOutlinedTextField
             label="Password"
@@ -93,7 +84,7 @@ function Signin() {
             type="password"
           />
           <SignInButton variant="contained" fullWidth>
-            Register
+            Sign In
           </SignInButton>
         </SignInForm>
         <SignInFooter container spacing={2}>
@@ -104,8 +95,8 @@ function Signin() {
           </Grid>
           <Grid item xs>
             <Button color="primary" fullWidth>
-              <Link to="/signin" className="anchor-reg">
-                Signin
+              <Link to="/signup" className="anchor-reg1">
+                Sign Up
               </Link>
             </Button>
           </Grid>

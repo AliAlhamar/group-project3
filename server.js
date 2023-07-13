@@ -12,17 +12,27 @@ const PORT = 4000;
 app.use(bodyParser.json());
 
 //mounting routes
-const authRoutes = require("./Routes/authRoute");
-const userRoutes = require("./Routes/User");
-const tokenRoutes = require("./Routes/tokenRoutes");
-const videoRoute = require("./Routes/video");
-const commentRoutes = require("./Routes/comment");
+// const authRoutes = require("./routes/authRoute");
+// const userRoutes = require("./routes/User");
+// const tokenRoutes = require("./routes/tokenRoutes");
+// const videoRoute = require("./Routes/video");
+// const commentRoutes = require("./Routes/comment");
 
-app.use("/api", authRoutes); //authentication route mount point for /api prefix
-app.use("/api", userRoutes); //user route mount point for /api prefix
-app.use("/api", tokenRoutes); //token route mount point for /api prefix
-app.use("/api", videoRoute); //video route mount point for /api prefix
-app.use("/api", commentRoutes); //comment route mount point for /api prefix
+const commentRouter = require("./Routes/comment");
+const playlistRouter = require("./Routes/playlist");
+const videoRoute = require("./Routes/video");
+const userRoutes = require("./Routes/User");
+
+app.use("/api", commentRouter);
+app.use("/api", playlistRouter);
+app.use("/api", videoRoute);
+app.use("/api", userRoutes);
+
+// app.use("/api", authRoutes); //authentication route mount point for /api prefix
+// app.use("/api", userRoutes); //user route mount point for /api prefix
+// app.use("/api", tokenRoutes); //token route mount point for /api prefix
+// app.use("/api", videoRoute); //video route mount point for /api prefix
+// app.use("/api", commentRoutes); //comment route mount point for /api prefix
 
 app.use(
   express.urlencoded({
@@ -34,6 +44,8 @@ app.use(function (req, res, next) {
   res.locals.currentUser = req.user;
   next();
 });
+
+console.log(process.env.MONGOCLUSTER);
 
 mongoose
   .connect(process.env.MONGO)
