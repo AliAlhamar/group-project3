@@ -10,8 +10,8 @@ const userPlaylistSchema = new mongoose.Schema({
   },
   videos: [
     {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "UserVideo",
+      type: String,
+      
     },
   ],
   createdBy: {

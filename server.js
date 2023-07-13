@@ -23,10 +23,10 @@ const playlistRouter = require("./Routes/playlist");
 const videoRoute = require("./Routes/video");
 const userRoutes = require("./Routes/User");
 
-app.use("/api", commentRouter);
-app.use("/api", playlistRouter);
-app.use("/api", videoRoute);
-app.use("/api", userRoutes);
+app.use("/", commentRouter);
+app.use("/", playlistRouter);
+app.use("/", videoRoute);
+app.use("/", userRoutes);
 
 // app.use("/api", authRoutes); //authentication route mount point for /api prefix
 // app.use("/api", userRoutes); //user route mount point for /api prefix
